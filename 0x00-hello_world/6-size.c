@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main : Entry point
+ * main - print sizes of data types
  * Description : prints various data types
  *  and their sizes
  * Return: 0 if worked, non-zero otherwise
