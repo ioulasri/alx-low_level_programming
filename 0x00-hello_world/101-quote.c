@@ -9,8 +9,10 @@
 
 int main(void)
 {
-	char line[59] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+	char line[59] = "and that piece of art is " 
+	"useful\" - Dora Korpar, 2015-10-19\n";
 	int i;
+
 	i = 0;
 	while (i < 59)
 	{
