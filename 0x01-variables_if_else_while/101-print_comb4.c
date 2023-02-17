@@ -13,10 +13,10 @@ int main(void)
    i = 0;
    while (i <= 7)
    {
-      j = 1;
+      j = i + 1;
       while (j <= 8)
       {
-         k = 2;
+         k = j + 1;
          while (k <= 9)
          {
             putchar(i + 48);
