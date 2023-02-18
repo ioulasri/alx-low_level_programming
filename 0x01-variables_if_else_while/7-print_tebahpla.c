@@ -1,19 +1,21 @@
 #include <stdio.h>
 
-/* main - print alphabets
-   Description: print stebahpla in reverse
-   Return value: Always 0 (Success)
-*/
+/**
+ * main - prints the lowercase alphabet in reverse,
+ * followed by a new line
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
-   int i;
+	int i;
 
-   i = 122;
-   while (i > 96)
-   {
-      putchar(i);
-      i--;
-   }
-   putchar('\n');
-   return (0);
+	i = 122;
+	while (i > 96)
+	{
+		putchar(i);
+		i--;
+	}
+	putchar('\n');
+	return (0);
 }
+
