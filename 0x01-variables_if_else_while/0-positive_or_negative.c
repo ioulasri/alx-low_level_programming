@@ -3,9 +3,9 @@
 #include <stdio.h>
 
 /*
-   main - assigns a random number to int n everytime
-   Description : 'check if given n is P or N'
-   Return : Always 0 (Success)
+ * main - assigns a random number to int n everytime
+ * Description - check if given n is P or N
+ * Return : Always 0 (Success)
  */
 int main(void)
 {
