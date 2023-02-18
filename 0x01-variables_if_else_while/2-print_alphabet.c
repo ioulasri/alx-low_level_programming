@@ -1,9 +1,10 @@
 #include <stdio.h>
 
-/* main - print alphabets
-   Description: by only using write print alphabets in lowercase
-   Return value: Always 0 (Success)
-*/
+/**
+ * main - print alphabets in lowercase
+ * putchar prints the alphabets
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
    int i;
