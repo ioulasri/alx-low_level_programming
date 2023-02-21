@@ -28,7 +28,7 @@ void print_number(int nb)
  * add - adds two integers given as parameters
  * @a: int a the first integer
  * @b: int b the second integer
- * Return: Always 0 (Sucess)
+ * Return: (Sucess)
  */
 
 int add(int a, int b)
