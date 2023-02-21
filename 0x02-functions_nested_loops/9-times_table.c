@@ -20,28 +20,28 @@ void times_table(void)
 			result = i * mult;
 			if (i * mult >= 10)
 			{
-				putchar((result / 10) + 48);
-				putchar((result % 10) + 48);
+				_putchar((result / 10) + 48);
+				_putchar((result % 10) + 48);
 				if (mult < 9)
 				{
-				putchar(',');
-				putchar(' ');
+				_putchar(',');
+				_putchar(' ');
 				}
 			}
 			else
 			{
-				putchar(result + 48);
+				_putchar(result + 48);
 				if (mult < 9)
 				{
-				putchar(',');
-				putchar(' ');
-				putchar(' ');
+				_putchar(',');
+				_putchar(' ');
+				_putchar(' ');
 				}
 			}
 			mult++;
 		}
 		mult = 0;
 		i++;
-		putchar('\n');
+		_putchar('\n');
 	}
 }
