@@ -21,8 +21,8 @@ void print_alphabet_x10(void)
 			c++;
 		}
 		c = 'a';
+		_putchar('\n');
 		i++;
 	}
-	_putchar('\n');
 }
 
