@@ -36,6 +36,6 @@ int add(int a, int b)
 	int result;
 
 	result = a + b;
-	print_number(result / 10);
+	print_number(result);
 	return (0);
 }
