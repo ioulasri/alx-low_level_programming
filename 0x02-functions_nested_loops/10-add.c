@@ -13,13 +13,13 @@ void print_number(int nb)
 		nb = nb * (-1);
 		print_number(nb);
 	}
-	if (n >= 10)
+	if (nb >= 10)
 	{
-		_putchar((n / 10) + 48);
-		_putchar((n % 10) + 48);
+		_putchar((nb / 10) + 48);
+		_putchar((nb % 10) + 48);
 	}
 	else
-		_putchar(n + 48);
+		_putchar(nb + 48);
 }
 /**
  * add - adds two integers given as parameters
