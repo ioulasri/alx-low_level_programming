@@ -37,5 +37,5 @@ int add(int a, int b)
 
 	result = a + b;
 	print_number(result);
-	return (1);
+	return ;
 }
