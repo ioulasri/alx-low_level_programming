@@ -54,6 +54,6 @@ void times_table(void)
 		}
 		mult = 0;
 		i++;
-		putchar('\n');
+		_putchar('\n');
 	}
 }
