@@ -13,14 +13,17 @@ void print_number(int nb)
 		nb = nb * (-1);
 		print_number(nb);
 	}
-	if (nb >= 10)
+	else if (nb > 10)
 	{
-		_putchar((nb / 10) + 48);
-		_putchar((nb % 10) + 48);
+		print_number(nb / 10);
+		print_number(nb % 10);
 	}
 	else
+	{
 		_putchar(nb + 48);
+	}
 }
+
 /**
  * add - adds two integers given as parameters
  * @a: int a the first integer
