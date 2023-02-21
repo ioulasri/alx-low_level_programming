@@ -6,15 +6,22 @@
  * Return: Always 0.
  */
 
- void print_alphabet_x10(void)
- {
- 	int i;
+void print_alphabet_x10(void)
+{
+	int i;
+	char c;
 
+	c = 'a';
 	i = 0;
-	while(i <= 9)
+	while (i <= 9)
 	{
-		print_alphabet();
+		while (c <= 'z')
+		{
+			_putchar(c);
+			c++;
+		}
+		i++;
 	}
 	_putchar('\n');
- }
+}
 
