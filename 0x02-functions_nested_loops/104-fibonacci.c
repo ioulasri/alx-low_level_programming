@@ -2,7 +2,7 @@
 
 /**
  * main - entry point
- * description - print the first 50 fibonacci numbers
+ * description - print the first 50 fibonacci numbers 1281
  * Return: Always 0 (success)
  */
 
@@ -16,10 +16,10 @@ int main(void)
 	count = 0;
 	a = 1;
 	b = 2;
-	while (count < 100)
+	while (count < 20)
 	{
 		printf("%lu", a);
-		if (count < 99)
+		if (count < 19)
 			printf(", ");
 		c = a + b;
 		a = b;
