@@ -12,20 +12,17 @@ int main(void)
 	long int a;
 	long int b;
 	long int c;
-	int count;
 	long int sum;
 
-	count = 0;
 	a = 1;
 	b = 2;
 	while (a <= 4000000)
 	{
+		if (a % 2 == 0)
+			sum += a;
 		c = a + b;
 		a = b;
 		b = c;
-		if (a % 2 == 0)
-			sum += a;
-		count++;
 	}
 	printf("%ld\n", sum);
 	return (0);
