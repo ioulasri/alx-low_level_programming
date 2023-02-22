@@ -16,8 +16,10 @@ int main(void)
 
 	a = 1;
 	b = 2;
-	while (a <= 4000000)
+	sum = 0;
+	while (a <= 3524578)
 	{
+		printf("%ld ", a);
 		if (a % 2 == 0)
 			sum += a;
 		c = a + b;
