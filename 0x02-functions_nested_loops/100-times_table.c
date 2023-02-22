@@ -42,19 +42,19 @@ void print_times_table(int n)
 		{
 			num = i * j;
 			printnumber(num);
-			if (j < n + 1 && i * (j + 1) < 10)
+			if (j < n && i * (j + 1) < 10)
 			{
 				_putchar(',');
 				_putchar(' ');
 				_putchar(' ');
 				_putchar(' ');
 			}
-			else if (j < n + 1 && i * (j + 1) >= 100)
+			else if (j < n && i * (j + 1) >= 100)
 			{
 				_putchar(',');
 				_putchar(' ');
 			}
-			else if (j < n + 1 && i * (j + 1) >= 10)
+			else if (j < n && i * (j + 1) >= 10)
 			{
 				_putchar(',');
 				_putchar(' ');
