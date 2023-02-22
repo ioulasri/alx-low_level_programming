@@ -35,7 +35,7 @@ void print_times_table(int n)
 	int j;
 	int num = 0;
 
-	if (n < 100)
+	if (n > 0 && n < 15)
 	{
 		while (i <= n)
 		{
