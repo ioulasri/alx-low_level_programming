@@ -1,0 +1,68 @@
+#include "main.h"
+
+/**
+ * printnumber - prints number
+ * @nb: nb to be printed
+ */
+
+void printnumber(int nb)
+{
+	if (nb < 0)
+	{
+		putchar('-');
+		nb = nb * (-1);
+		printnumber(nb);
+	}
+	else if (nb >= 10)
+	{
+		printnumber(nb / 10);
+		printnumber(nb % 10);
+	}
+	else
+	{
+		putchar(nb + 48);
+	}
+}
+
+/**
+ * print_times_table - prints number multiplication table
+ * @n: n the number of multiplication columns
+ */
+
+void print_times_table(int n)
+{
+	int i = 0;
+	int j;
+	int num = 0;
+
+	while (i <= n)
+	{
+		j = 0;
+		while (j <= (n + 1))
+		{
+			num = i * j;
+			printnumber(num);
+			if (j < n + 1 && i * (j + 1) < 10)
+			{
+				putchar(',');
+				putchar(' ');
+				putchar(' ');
+				putchar(' ');
+			}
+			else if (j < n + 1 && i * (j + 1) >= 100)
+			{
+				putchar(',');
+				putchar(' ');
+			}
+			else if (j < n + 1 && i * (j + 1) >= 10)
+			{
+				putchar(',');
+				putchar(' ');
+				putchar(' ');
+			}
+			j++;
+		}
+		putchar('\n');
+		i++;
+	}
+}
