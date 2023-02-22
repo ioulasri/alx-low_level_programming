@@ -1,6 +1,13 @@
 #include <stdio.h>
 
-int main()
+/**
+ * main - entry point
+ * description - calculate the running sum of all multipliers
+ * of 3 and 5 starting from zero to 1024 excluded
+ * Return: Always 0 (success)
+ */
+
+int main(void)
 {
 	int sum;
 	int i;
@@ -23,5 +30,5 @@ int main()
 			i++;
 	}
 	printf("%d\n", sum);
-	return 0;
+	return (0);
 }
