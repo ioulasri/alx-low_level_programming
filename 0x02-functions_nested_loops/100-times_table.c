@@ -34,8 +34,9 @@ void print_times_table(int n)
 	int i = 0;
 	int j;
 	int num = 0;
+
 	if (n < 100)
-	{	
+	{
 		while (i <= n)
 		{
 			j = 0;
@@ -66,5 +67,5 @@ void print_times_table(int n)
 			_putchar('\n');
 			i++;
 		}
-	}	
+	}
 }
