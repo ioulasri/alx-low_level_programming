@@ -34,39 +34,37 @@ void print_times_table(int n)
 	int i = 0;
 	int j;
 	int num = 0;
-
-	while (i <= n)
-	{
-		j = 0;
-		while (j < (n + 1))
+	if (n < 100)
+	{	
+		while (i <= n)
 		{
-			num = i * j;
-			printnumber(num);
-			if (j < n && i * (j + 1) < 10)
+			j = 0;
+			while (j < (n + 1))
 			{
-				_putchar(',');
-				_putchar(' ');
-				_putchar(' ');
-				_putchar(' ');
+				num = i * j;
+				printnumber(num);
+				if (j < n && i * (j + 1) < 10)
+				{
+					_putchar(',');
+					_putchar(' ');
+					_putchar(' ');
+					_putchar(' ');
+				}
+				else if (j < n && i * (j + 1) >= 100)
+				{
+					_putchar(',');
+					_putchar(' ');
+				}
+				else if (j < n && i * (j + 1) >= 10)
+				{
+					_putchar(',');
+					_putchar(' ');
+					_putchar(' ');
+				}
+				j++;
 			}
-			else if (j < n && i * (j + 1) >= 1000)
-			{
-				_putchar(',');
-			}
-			else if (j < n && i * (j + 1) >= 100)
-			{
-				_putchar(',');
-				_putchar(' ');
-			}
-			else if (j < n && i * (j + 1) >= 10)
-			{
-				_putchar(',');
-				_putchar(' ');
-				_putchar(' ');
-			}
-			j++;
+			_putchar('\n');
+			i++;
 		}
-		_putchar('\n');
-		i++;
-	}
+	}	
 }
