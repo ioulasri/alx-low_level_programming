@@ -2,7 +2,7 @@
 
 /**
  * main - entry point
- * description - calculate the running sum of all multipliers
+ * description - calculate and print the running sum of all multipliers
  * of 3 and 5 starting from zero to 1024 excluded
  * Return: Always 0 (success)
  */
