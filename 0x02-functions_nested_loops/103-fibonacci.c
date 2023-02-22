@@ -2,33 +2,27 @@
 
 /**
  * main - entry point
- * description - calculate and print the running sum of all multipliers
- * of 3 and 5 starting from zero to 1024 excluded
+ * description - print the first 50 fibonacci numbers
  * Return: Always 0 (success)
  */
 
 int main(void)
 {
-	int sum;
-	int i;
+	int a;
+	int b;
+	int count;
 
-	i = 0;
-	sum = 0;
-	while (i < 1024)
+	count = 0;
+	a = 1;
+	b = 2;
+	while (count < 50)
 	{
-		if (i % 3 == 0)
-		{
-			sum += i;
-			i++;
-		}
-		else if (i % 5 == 0)
-		{
-			sum += i;
-			i++;
-		}
-		else
-			i++;
+		printf("%d, ", a);
+		printf("%d, ", b);
+		a = a + b;
+		b = a + b;
+		count++;
 	}
-	printf("%d\n", sum);
+	printf("\n");
 	return (0);
 }
