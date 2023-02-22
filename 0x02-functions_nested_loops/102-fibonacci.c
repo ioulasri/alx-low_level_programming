@@ -16,7 +16,7 @@ int main(void)
 	count = 0;
 	a = 1;
 	b = 2;
-	while (count < 52)
+	while (count < 51)
 	{
 		printf("%ld", a);
 		if (a < 20000000000)
