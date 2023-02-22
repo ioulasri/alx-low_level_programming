@@ -38,7 +38,7 @@ void print_times_table(int n)
 	while (i <= n)
 	{
 		j = 0;
-		while (j <= (n + 1))
+		while (j < (n + 1))
 		{
 			num = i * j;
 			printnumber(num);
