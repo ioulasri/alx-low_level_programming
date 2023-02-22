@@ -19,7 +19,6 @@ int main(void)
 	sum = 0;
 	while (a <= 3524578)
 	{
-		printf("%ld ", a);
 		if (a % 2 == 0)
 			sum += a;
 		c = a + b;
