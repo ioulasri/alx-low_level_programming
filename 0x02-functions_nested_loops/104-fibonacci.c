@@ -16,10 +16,10 @@ int main(void)
 	count = 0;
 	a = 1;
 	b = 2;
-	while (count <= 98)
+	while (count <= 97)
 	{
 		printf("%lu", a);
-		if (count < 98)
+		if (count < 97)
 			printf(", ");
 		c = a + b;
 		a = b;
