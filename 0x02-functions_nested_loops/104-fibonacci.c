@@ -16,7 +16,7 @@ int main(void)
 	count = 0;
 	a = 1;
 	b = 2;
-	while (count < 99)
+	while (count <= 98)
 	{
 		printf("%lu", a);
 		if (count < 98)
