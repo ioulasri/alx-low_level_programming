@@ -8,9 +8,9 @@
 
 int main(void)
 {
-	long long a;
-	long long b;
-	long long c;
+	long long int a;
+	long long int b;
+	long long int c;
 	int count;
 
 	count = 0;
