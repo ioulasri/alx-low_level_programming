@@ -24,8 +24,8 @@ int main(void)
 			printf(", ");
 		}
 		c = a + b;
-        a = b;
-        b = c;
+		a = b;
+		b = c;
 		count++;
 	}
 	printf("\n");
