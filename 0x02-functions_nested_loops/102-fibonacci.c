@@ -8,9 +8,9 @@
 
 int main(void)
 {
-	long long int a;
-	long long int b;
-	long long int c;
+	long int a;
+	long int b;
+	long int c;
 	int count;
 
 	count = 0;
@@ -18,7 +18,7 @@ int main(void)
 	b = 1;
 	while (count < 52)
 	{
-		printf("%lld", a);
+		printf("%ld", a);
 		if (a < 20000000000)
 		{
 			printf(", ");
