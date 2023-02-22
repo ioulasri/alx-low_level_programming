@@ -9,7 +9,7 @@ void printnumber(int nb)
 {
 	if (nb < 0)
 	{
-		putchar('-');
+		_putchar('-');
 		nb = nb * (-1);
 		printnumber(nb);
 	}
@@ -20,7 +20,7 @@ void printnumber(int nb)
 	}
 	else
 	{
-		putchar(nb + 48);
+		_putchar(nb + 48);
 	}
 }
 
@@ -44,25 +44,25 @@ void print_times_table(int n)
 			printnumber(num);
 			if (j < n + 1 && i * (j + 1) < 10)
 			{
-				putchar(',');
-				putchar(' ');
-				putchar(' ');
-				putchar(' ');
+				_putchar(',');
+				_putchar(' ');
+				_putchar(' ');
+				_putchar(' ');
 			}
 			else if (j < n + 1 && i * (j + 1) >= 100)
 			{
-				putchar(',');
-				putchar(' ');
+				_putchar(',');
+				_putchar(' ');
 			}
 			else if (j < n + 1 && i * (j + 1) >= 10)
 			{
-				putchar(',');
-				putchar(' ');
-				putchar(' ');
+				_putchar(',');
+				_putchar(' ');
+				_putchar(' ');
 			}
 			j++;
 		}
-		putchar('\n');
+		_putchar('\n');
 		i++;
 	}
 }
