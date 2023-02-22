@@ -8,19 +8,24 @@
 
 int main(void)
 {
-	int a;
-	int b;
+	long long a;
+	long long b;
+	long long c;
 	int count;
 
 	count = 0;
-	a = 1;
-	b = 2;
-	while (count < 50)
+	a = 0;
+	b = 1;
+	while (count < 52)
 	{
-		printf("%d, ", a);
-		printf("%d, ", b);
-		a = a + b;
-		b = a + b;
+		printf("%lld", a);
+		if (a < 20000000000)
+		{
+			printf(", ");
+		}
+		c = a + b;
+        a = b;
+        b = c;
 		count++;
 	}
 	printf("\n");
