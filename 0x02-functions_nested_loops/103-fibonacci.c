@@ -27,6 +27,6 @@ int main(void)
 			sum += a;
 		count++;
 	}
-	printf("%d\n", sum);
+	printf("%ld\n", sum);
 	return (0);
 }
