@@ -13,7 +13,7 @@ void print_square(int size)
 	
 	i = 1;
 	if (n <= 0)
-		putchar('\n');
+		_putchar('\n');
 	else
 	{
 		while (i <= n)
@@ -21,11 +21,11 @@ void print_square(int size)
 			rows = n;
 				while (rows > 0)
 				{
-					putchar('#');
+					_putchar('#');
 					rows--;
 				}
 			i++;
-			putchar('\n');
+			_putchar('\n');
 		}
 	}
 }
