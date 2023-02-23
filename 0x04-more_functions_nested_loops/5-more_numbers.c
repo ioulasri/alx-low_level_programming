@@ -1,6 +1,16 @@
 #include "main.h"
 
 /**
+ * print_one_digit - prints one digit
+ * @n: the number to be printed
+ */
+
+void print_one_digit(int n)
+{
+	_putchar(n % 10 + 48);
+}
+
+/**
  * print_numbers - prints numbers from 0 to 14
  * description: prints numbers starting from 0 to 14
  */
@@ -22,16 +32,6 @@ void print_numbers(void)
 		number++;
 	}
 	_putchar('\n');
-}
-
-/**
- * print_one_digit - prints one digit
- * @n: the number to be printed
- */
-
-void print_one_digit(int n)
-{
-	_putchar(n % 10 + 48);
 }
 
 /**
