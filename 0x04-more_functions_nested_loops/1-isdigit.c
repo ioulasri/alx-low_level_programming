@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _isupper - function that checks if passed char is a number
+ * _isdigit - function that checks if passed char is a number
  * @c: the char to be checked
  * Return: 1 if number , 0 otherwise
  */
