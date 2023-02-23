@@ -5,12 +5,12 @@
  * Desription: FIZZBUZZ who doesn't know it
  */
 
-int main()
+int main(void)
 {
 	int i;
 
 	i = 1;
-	while (i <= 100)
+	while (i <= 99)
 	{
 		if (i % 5 == 0 && i % 3 == 0)
 			printf("FizzBuzz ");
@@ -22,5 +22,6 @@ int main()
 			printf("%d ", i);
 		i++;
 	}
+	printf("Buzz");
 	return (0);
 }
