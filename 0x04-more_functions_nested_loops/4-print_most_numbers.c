@@ -10,9 +10,10 @@ void print_most_numbers(void)
 	char number;
 
 	number = '0';
-	while (number <= '9' && (number != '2' || number != '4'))
+	while (number <= '9')
 	{
-		_putchar(number);
+		if (number != '2' || number != '4')
+			_putchar(number);
 		number++;
 	}
 	_putchar('\n');
