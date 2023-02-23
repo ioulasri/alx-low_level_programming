@@ -12,7 +12,7 @@ void print_numbers(void)
 	number = 0;
 	while (number <= 14)
 	{
-		if (number > 10)
+		if (number >= 10)
 		{
 			_putchar(number / 10 + 48);
 			print_one_digit(number);
