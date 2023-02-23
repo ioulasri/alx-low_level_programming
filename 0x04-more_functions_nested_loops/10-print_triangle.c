@@ -10,21 +10,21 @@ void print_triangle(int size)
 {
 	int i;
 	int a;
-	int size;
+	int n;
 	int z;
 
-	size = n;
+	n = size;
 	i = 1;
 	a = 1;
 	z = 0;
-	if (n <= 0)
+	if (size <= 0)
 		_putchar('\n');
 	else
 	{
-		while (i < n + 1)
+		while (i < size + 1)
 		{
 			a = z;
-			while ((size - a) - 1 > 0)
+			while ((n - a) - 1 > 0)
 			{
 				_putchar(' ');
 				a++;
