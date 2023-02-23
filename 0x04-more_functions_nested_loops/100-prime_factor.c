@@ -1,10 +1,12 @@
 #include <stdio.h>
 
 int is_prime(long int n) {
+	long int i;
+	
 	if (n < 2) {
 		return 0;
 	}
-	long int i = 2;
+	i = 2;
 	while (i <= n / i) {
 		if (n % i == 0) {
 			return 0;
@@ -15,8 +17,11 @@ int is_prime(long int n) {
 }
 
 long int largest_prime_factor(long int n) {
-	long int largest_factor = 1;
-	long int i = 2;
+	long int largest_factor;
+	long int i;
+
+	largest_factor = 1;
+	i = 2;
 	while (i <= n / i) {
 		if (n % i == 0) {
 			if (is_prime(i)) {
@@ -33,7 +38,8 @@ long int largest_prime_factor(long int n) {
 
 int main() 
 {
-	long int n = 612852475143;
+	long int n;
+	n = 612852475143;
 	printf("Largest prime factor of %ld is %ld\n", n, largest_prime_factor(n));
 	return 0;
 }
