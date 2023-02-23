@@ -18,7 +18,7 @@ void print_triangle(int size)
 	a = 1;
 	z = 0;
 	if (n <= 0)
-		putchar('\n');
+		_putchar('\n');
 	else
 	{
 		while (i < n + 1)
@@ -26,18 +26,18 @@ void print_triangle(int size)
 			a = z;
 			while ((size - a) - 1 > 0)
 				{
-				putchar(' ');
+				_putchar(' ');
 				a++;
 			}
 			a = z;
 			while (a >= 0)
 			{
-				putchar('#');
+				_putchar('#');
 				a--;
 			}
 			z++;
 			i++;
-			putchar('\n');
+			_putchar('\n');
 		}
 	}
 }
