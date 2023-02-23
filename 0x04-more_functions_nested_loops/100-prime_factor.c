@@ -58,7 +58,7 @@ int main(void)
 {
 	long int n;
 
-	n = 612852475143;
+	n = 6128524324751943;
 	printf("Largest prime factor of %ld is %ld\n", n, largest_prime_factor(n));
 	return (0);
 }
