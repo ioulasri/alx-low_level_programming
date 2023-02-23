@@ -12,13 +12,13 @@ void print_square(int size)
 	int rows;
 
 	i = 1;
-	if (n <= 0)
+	if (size <= 0)
 		_putchar('\n');
 	else
 	{
-		while (i <= n)
+		while (i <= size)
 		{
-			rows = n;
+			rows = size;
 				while (rows > 0)
 				{
 					_putchar('#');
