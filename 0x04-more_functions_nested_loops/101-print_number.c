@@ -21,4 +21,3 @@ void print_number(int n)
 	else
 		_putchar(nb + 48);
 }
-
