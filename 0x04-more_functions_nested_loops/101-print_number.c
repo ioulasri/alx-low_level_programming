@@ -7,17 +7,17 @@
 
 void print_number(int n)
 {
-	if (nb < 0)
+	if (n < 0)
 	{
 		_putchar('-');
-		nb = -nb;
+		n = -n;
 		print_number(nb);
 	}
-	else if (nb > 9)
+	else if (n > 9)
 	{
-		print_number(nb / 10);
-		print_number(nb % 10);
+		print_number(n / 10);
+		print_number(n % 10);
 	}
 	else
-		_putchar(nb + 48);
+		_putchar(n + 48);
 }
