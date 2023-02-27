@@ -13,6 +13,7 @@ void print_array(int *a, int n)
 
 	i = 0;
 	if (n >= 0)
+	{
 		while (i < n)
 		{
 			if (i + 1 < n)
@@ -21,4 +22,5 @@ void print_array(int *a, int n)
 				printf("%d\n", a[i]);
 			i++;
 		}
+	}
 }
