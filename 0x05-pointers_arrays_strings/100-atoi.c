@@ -22,12 +22,12 @@ int _atoi(char *s)
 		i++;
 	}
 	i = 0;
-	while (str[i])
+	while (s[i])
 	{
-		if (str[i] >= '0' && str[i] <= '9')
+		if (s[i] >= '0' && s[i] <= '9')
 		{
 			result *= 10;
-			result += str[i] - 48;
+			result += s[i] - 48;
 		}
 		i++;
 	}
