@@ -29,12 +29,24 @@ int _atoi(char *s)
 	}
 	if (len > i)
 	{
-		while (s[i] >= '0' && s[i] <= '9')
+		if (sign == -1)
 		{
-			result *= 10;
-			result += s[i] - 48;
-			i++;
+			while (s[i] >= '0' && s[i] <= '9')
+			{
+				result *= 10;
+				result -= s[i] - 48;
+				i++;
+			}
+		}
+		else
+		{
+			while (s[i] >= '0' && s[i] <= '9')
+			{
+				result *= 10;
+				result += s[i] - 48;
+				i++;
+			}
 		}
 	}
-	return (result * sign);
+	return (result);
 }
