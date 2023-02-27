@@ -2,7 +2,7 @@
 
 /**
  * _puts - prints a given string
- * @s: the string
+ * @str: the string
  * Return: the length of given string
  */
 
@@ -11,9 +11,9 @@ void _puts(char *str)
 	int i;
 
 	i = 0;
-	while (s[i])
+	while (str[i])
 	{
-		_putchar(s[i]);
+		_putchar(str[i]);
 		i++;
 	}
 }
