@@ -9,9 +9,12 @@
 
 void print_array(int *a, int n)
 {
-	while (a[n])
+	int i;
+
+	i = 0;
+	while (i < n)
 	{
-		printf("%sd\n", a[n]);
-		n++;
+		printf("%sd\n", a[i]);
+		i++;
 	}
 }
