@@ -1,12 +1,11 @@
 #include "main.h"
 
 /**
- * _puts - prints a given string
+ * print_rev - prints a given string in reverse
  * @str: the string
- * Return: the length of given string
  */
 
-void _puts(char *str)
+void print_rev(char *str)
 {
 	int i;
 
