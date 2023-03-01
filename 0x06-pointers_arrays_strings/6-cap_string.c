@@ -19,7 +19,7 @@ char *cap_string(char *s)
 			|| s[i] == '}')
 		{
 			if (s[i + 1] >= 'a' && s[i + 1] <= 'z')
-				s[i + 1] += 'A' - 'a';
+				s[i + 1] -= 'A' - 'a';
 		}
 
 		i++;
