@@ -1,132 +1,77 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * reverse_string - reverses the order of characters in a string
- * @str: pointer to the string to be reversed
- * Return: void
+ * reverse_array - reverse array
+ * @n: integer params
+ * @a: the array
+ * Return: 0
  */
-void reverse_string(char *str)
+
+void reverse_array(int *a, int n)
 {
-	int i = 0, j = 0;
-	char temp;
+	int i;
+	int j;
+	int swap;
 
-	/* Find the length of the string */
-	while (*(str + i) != '\0')
+	i = 0;
+	j = n - 1;
+	while (i < n / 2)
 	{
+		swap = a[i];
+		a[i] = a[j];
+		a[j] = swap;
 		i++;
-	}
-	i--;
-
-	/* Swap characters from start and end of string until halfway point */
-	for (j = 0; j < i; j++, i--)
-	{
-		temp = *(str + j);
-		*(str + j) = *(str + i);
-		*(str + i) = temp;
+		j--;
 	}
 }
 
 /**
- * infinite_add - adds two positive numbers together
- * and stores the result in a buffer
- * @n1: string representation of the first number to add
- * @n2: string representation of the second number to add
- * @r: pointer to a buffer to store the result
- * @size_r: size of the result buffer
- * Return: pointer to the result buffer, or 0 if result buffer is too small
+ * infinite_add - add 2 numbers together
+ * @n1: text representation of 1st number to add
+ * @n2: text representation of 2nd number to add
+ * @r: pointer to buffer
+ * @size_r: buffer size
+ * Return: pointer to calling function
  */
 
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int carry = 0, i = 0, j = 0, num1_digit = 0, num2_digit = 0, temp_sum = 0;
-	int num1_len = 0, num2_len = 0, result_len = 0;
+	int overflow = 0, i = 0, j = 0, digits = 0;
+	int val1 = 0, val2 = 0, temp_tot = 0;
 
-	while (n1[num1_len])
-		num1_len++;
-	while (n2[num2_len])
-		num2_len++;
-	if (num1_len > size_r - 1 || num2_len > size_r - 1)
+	while (n[i])
+		i++;
+	while (n2[i])
+		j++;
+	i--;
+	j--;
+	if (j >= size_r || i >= size_r)
 		return (0);
-	/* Traverse n1 and n2 from right to left, adding digits and carry */
 	while (j >= 0 || i >= 0 || carry == 1)
 	{
-		/* Get num1 and num2 or 0 if all numbers have been processed */
 		if (i < 0)
-			num1_digit = 0;
+			val1 = 0;
 		else
-			num1_digit = n1[i] - '0';
+			val1 = n1[i] - '0';
 		if (j < 0)
-			num2_digit = 0;
+			val2 = 0;
 		else
-			num2_digit = n2[j] - '0';
-		/* Add the digits and carry, and set new carry if necessary */
-		temp_sum = num1_digit + num2_digit + carry;
-		if (temp_sum >= 10)
+			val2 = n2[i] - '0';
+		temp_tot = val1 + val2 + carry;
+		if (temp_tot >= 10)
 			carry = 1;
 		else
 			carry = 0;
-		if (result_len >= size_r - 1)
+		if (digits >= (size_r - 1))
 			return (0);
-		/* Add the sum digit to the result buffer */
-		r[result_len] = (temp_sum % 10) + '0';
-		result_len++;
+		r[digits] = (temp_tot % 10) + '0';
+		digits++;
 		j--;
 		i--;
 	}
-	r[result_len] = '\0';
-	reverse_string(r);
+	if (digits == size_r)
+		return (0);
+	r[digits] = '\0';
+	rev_string(r);
 	return (r);
-}
-
-int main(void)
-{
-        char *n = "1234567892434574367823574575678477685785645685876876774586734734563456453743756756784458";
-        char *m = "9034790663470697234682914569346259634958693246597324659762347956349265983465962349569346";
-        char r[100];
-        char r2[10];
-        char r3[11];
-        char *res;
-
-        res = infinite_add(n, m, r, 100);
-        if (res == 0)
-        {
-                printf("Error\n");
-        }
-        else
-        {
-                printf("%s + %s = %s\n", n, m, res);
-        }
-        n = "1234567890";
-        m = "1";
-        res = infinite_add(n, m, r2, 10);
-        if (res == 0)
-        {
-                printf("Error\n");
-        }
-        else
-        {
-                printf("%s + %s = %s\n", n, m, res);
-        }
-        n = "999999999";
-        m = "1";
-        res = infinite_add(n, m, r2, 10);
-        if (res == 0)
-        {
-                printf("Error\n");
-        }
-        else
-        {
-                printf("%s + %s = %s\n", n, m, res);
-        }
-        res = infinite_add(n, m, r3, 11);
-        if (res == 0)
-        {
-                printf("Error\n");
-        }
-        else
-        {
-                printf("%s + %s = %s\n", n, m, res);
-        }
-        return (0);
 }
