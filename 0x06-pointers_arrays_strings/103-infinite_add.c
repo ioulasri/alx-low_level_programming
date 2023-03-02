@@ -1,112 +1,91 @@
-#include "main.h"
-#include <stddef.h>
-
 /**
- * reverse_array - reverses an array of integers
- * @a: the array of integers
- * @n: the size of the array
- **/
-
-void reverse_array(int *a, int n)
-{
-	int i;
-	int j;
-	int swap;
-
-	i = 0;
-	j = n - 1;
-	while (i < n / 2)
-	{
-		swap = a[i];
-		a[i] = a[j];
-		a[j] = swap;
-		i++;
-		j--;
-	}
-}
-
-
-/**
- * _strlen - returns the length of a given string
- * @s: the string
- * Return: the length of given string
+ * reverse_string - reverses the order of characters in a string
+ * @str: pointer to the string to be reversed
+ * Return: void
  */
-
-int _strlen(char *s)
+void reverse_string(char *str)
 {
-	int i;
+	int i = 0, j = 0;
+	char temp;
 
-	i = 0;
-	while (s[i])
+	// Find the length of the string
+	while (*(str + i) != '\0')
 	{
 		i++;
 	}
-	return (i);
+	i--;
+
+	// Swap characters from start and end of string until halfway point
+	for (j = 0; j < i; j++, i--)
+	{
+		temp = *(str + j);
+		*(str + j) = *(str + i);
+		*(str + i) = temp;
+	}
 }
 
-char* infinite_add(char* n1, char* n2, char* r, int size_r) {
-	if (n1 == NULL || n2 == NULL || r == NULL || size_r < 1) {
-		return 0;
-	}
-	
-	int len1;
-	int len2;
-	int carry;
-	int sum;
-	int idx1;
-	int idx2;
-	int idxr;
-	char temp;
-	int digit1;
-	int digit2;
+/**
+ * infinite_add - adds two positive numbers together and stores the result in a buffer
+ * @num1: string representation of the first number to add
+ * @num2: string representation of the second number to add
+ * @result: pointer to a buffer to store the result
+ * @result_size: size of the result buffer
+ * Return: pointer to the result buffer, or 0 if result buffer is too small
+ */
+char *infinite_add(char *num1, char *num2, char *result, int result_size)
+{
+	int carry = 0, i = 0, j = 0, num1_digit = 0, num2_digit = 0, temp_sum = 0;
+	int num1_len = 0, num2_len = 0, result_len = 0;
 
-	len1 = _strlen(n1);
-	len2 = _strlen(n2);
-	carry = 0;
-	sum = 0;
-	idx1 = len1 - 1;
-	idx2 = len2 - 1;
-	idxr = 0;
+	// Find the lengths of the two input numbers
+	while (*(num1 + num1_len) != '\0')
+		num1_len++;
+	while (*(num2 + num2_len) != '\0')
+		num2_len++;
 
-	// add digits from right to left until one of the strings is exhausted
-	while (idx1 >= 0 || idx2 >= 0) {
-		digit1 = (idx1 >= 0) ? n1[idx1] - '0' : 0;
-		digit2 = (idx2 >= 0) ? n2[idx2] - '0' : 0;
-		
-		sum = digit1 + digit2 + carry;
-		carry = sum / 10;
-		sum %= 10;
-		
-		// check if there is enough space in the result buffer
-		if (idxr >= size_r - 1) {
-			return 0;
-		}
-		
-		r[idxr] = sum + '0';
-		idxr++;
-		idx1--;
-		idx2--;
+	// Check if result buffer is large enough to hold the sum
+	if (num1_len > result_size - 1 || num2_len > result_size - 1)
+		return (0);
+
+	// Traverse both numbers from right to left, adding corresponding digits and carry
+	while (j >= 0 || i >= 0 || carry == 1)
+	{
+		// Get the current digit from num1 and num2, or 0 if all digits have been processed
+		if (i < 0)
+			num1_digit = 0;
+		else
+			num1_digit = *(num1 + i) - '0';
+		if (j < 0)
+			num2_digit = 0;
+		else
+			num2_digit = *(num2 + j) - '0';
+
+		// Add the digits and carry, and set new carry if necessary
+		temp_sum = num1_digit + num2_digit + carry;
+		if (temp_sum >= 10)
+			carry = 1;
+		else
+			carry = 0;
+
+		// Check if result buffer is large enough to hold next digit
+		if (result_len >= result_size - 1)
+			return (0);
+
+		// Add the sum digit to the result buffer
+		*(result + result_len) = (temp_sum % 10) + '0';
+		result_len++;
+
+		// Move to the next digit
+		j--;
+		i--;
 	}
-	
-	// if there is still a carry digit left, add it to the result
-	if (carry != 0) {
-		if (idxr >= size_r - 1) {
-			return 0;
-		}
-		
-		r[idxr] = carry + '0';
-		idxr++;
-	}
-	
-	// terminate the result string with a null character
-	r[idxr] = '\0';
-	
-	// reverse the result string to get the correct order of digits
-	for (int i = 0; i < idxr / 2; i++) {
-		temp = r[i];
-		r[i] = r[idxr - i - 1];
-		r[idxr - i - 1] = temp;
-	}
-	
-	return r;
+
+	// Add null terminator to the end of the result buffer
+	*(result + result_len) = '\0';
+
+	// Reverse the order of characters in the result buffer
+	reverse_string(result);
+
+	// Return a pointer to the result buffer
+	return (result);
 }
