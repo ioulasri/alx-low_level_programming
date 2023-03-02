@@ -29,10 +29,10 @@ void reverse_string(char *str)
 /**
  * infinite_add - adds two positive numbers together
  * and stores the result in a buffer
- * @num1: string representation of the first number to add
- * @num2: string representation of the second number to add
- * @result: pointer to a buffer to store the result
- * @result_size: size of the result buffer
+ * @n1: string representation of the first number to add
+ * @n2: string representation of the second number to add
+ * @r: pointer to a buffer to store the result
+ * @size_r: size of the result buffer
  * Return: pointer to the result buffer, or 0 if result buffer is too small
  */
 
