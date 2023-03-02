@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * reverse_string - reverses the order of characters in a string
  * @str: pointer to the string to be reversed
