@@ -75,5 +75,5 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	}
 	*(r + result_len) = '\0';
 	reverse_string(r);
-	return (result);
+	return (r);
 }
