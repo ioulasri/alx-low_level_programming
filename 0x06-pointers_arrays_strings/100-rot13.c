@@ -9,23 +9,24 @@
 char *rot13(char *s)
 {
 	int i;
+	int j;
+
+	char *array1 = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	char *array2 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
 	i = 0;
+
 	while (s[i])
 	{
-		if (s[i] >= 'a' && s[i] <= 'z')
+		j = 0;
+		while (array2[j])
 		{
-			if (s[i] + 13 <= 'z')
-				s[i] += 13;
-			else
+			if (array2[j] == s[i])
 			{
-				s[i] = 'a' + 12 - ('z' - s[i]);
+				s[i] = array1[j];
+				break;
 			}
-		}
-		else if (s[i] >= 'A' && s[i] <= 'Z')
-		{
-			if (s[i] + 13 < 'Z')
-				s[i] += 13;
+			j++;
 		}
 		i++;
 	}
