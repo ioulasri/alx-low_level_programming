@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * leet - converts specific characters to 4-3-0-7-1
@@ -29,4 +30,15 @@ char *leet(char *s)
 		i++;
 	}
 	return (s);
+}
+
+int main(void)
+{
+    char s[] = "Expect the best. Prepare for the worst. Capitalize on what comes.\n";
+    char *p;
+
+    p = leet(s);
+    printf("%s", p);
+    printf("%s", s);
+    return (0);
 }
