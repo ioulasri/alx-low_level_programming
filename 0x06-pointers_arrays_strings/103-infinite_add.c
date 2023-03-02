@@ -3,25 +3,26 @@
 /**
  * reverse_array - reverse array
  * @n: integer params
- * @a: the array
  * Return: 0
  */
 
-void reverse_array(int *a, int n)
+void rev_array(char *n)
 {
-	int i;
-	int j;
-	int swap;
+	int i = 0;
+	int j = 0;
+	char temp;
 
-	i = 0;
-	j = n - 1;
-	while (i < n / 2)
+	while (*(n + i) != '\0')
 	{
-		swap = a[i];
-		a[i] = a[j];
-		a[j] = swap;
 		i++;
-		j--;
+	}
+	i--;
+
+	for (j = 0; j < i; j++, i--)
+	{
+		temp = *(n + j);
+		*(n + j) = *(n + i);
+		*(n + i) = temp;
 	}
 }
 
@@ -36,10 +37,10 @@ void reverse_array(int *a, int n)
 
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int overflow = 0, i = 0, j = 0, digits = 0;
+	int carry = 0, i = 0, j = 0, digits = 0;
 	int val1 = 0, val2 = 0, temp_tot = 0;
 
-	while (n[i])
+	while (n1[i])
 		i++;
 	while (n2[i])
 		j++;
@@ -72,6 +73,6 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	if (digits == size_r)
 		return (0);
 	r[digits] = '\0';
-	rev_string(r);
+	rev_array(r);
 	return (r);
 }
