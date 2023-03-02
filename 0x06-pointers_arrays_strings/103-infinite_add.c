@@ -54,11 +54,11 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		if (i < 0)
 			num1_digit = 0;
 		else
-			num1_digit = *(n1 + i) - '0';
+			num1_digit = n1[i] - '0';
 		if (j < 0)
 			num2_digit = 0;
 		else
-			num2_digit = *(n2 + j) - '0';
+			num2_digit = n2[j] - '0';
 		/* Add the digits and carry, and set new carry if necessary */
 		temp_sum = num1_digit + num2_digit + carry;
 		if (temp_sum >= 10)
@@ -68,12 +68,12 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		if (result_len >= size_r - 1)
 			return (0);
 		/* Add the sum digit to the result buffer */
-		*(r + result_len) = (temp_sum % 10) + '0';
+		r[result_len] = (temp_sum % 10) + '0';
 		result_len++;
 		j--;
 		i--;
 	}
-	*(r + result_len) = '\0';
+	r[result_len] = '\0';
 	reverse_string(r);
 	return (r);
 }
