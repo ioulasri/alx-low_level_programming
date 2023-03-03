@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * reverse_array - reverse array
@@ -38,11 +39,11 @@ void rev_array(char *n)
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
 	int carry = 0, i = 0, j = 0, digits = 0;
-	int val1 = 0, val2 = 0, temp_tot = 0;
+	int val1 = 0, val2 = 0, total = 0;
 
-	while (n1[i])
+	while (*(n1 + i) != '\0')
 		i++;
-	while (n2[i])
+	while (*(n2 + j) != '\0')
 		j++;
 	i--;
 	j--;
@@ -53,19 +54,19 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		if (i < 0)
 			val1 = 0;
 		else
-			val1 = n1[i] - '0';
+			val1 = *(n1 + i) - '0';
 		if (j < 0)
 			val2 = 0;
 		else
-			val2 = n2[i] - '0';
-		temp_tot = val1 + val2 + carry;
-		if (temp_tot >= 10)
+			val2 = *(n2 + j) - '0';
+		total = val1 + val2 + carry;
+		if (total >= 10)
 			carry = 1;
 		else
 			carry = 0;
 		if (digits >= (size_r - 1))
 			return (0);
-		r[digits] = (temp_tot % 10) + '0';
+		r[digits] = (total % 10) + '0';
 		digits++;
 		j--;
 		i--;
