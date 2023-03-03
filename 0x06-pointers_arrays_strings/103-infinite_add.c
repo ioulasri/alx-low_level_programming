@@ -2,12 +2,12 @@
 #include <stdio.h>
 
 /**
- * reverse_array - reverse array
+ * rev_array - reverse array
  * @n: integer params
  * Return: 0
  */
 
-void reverse_array(char *n)
+void rev_array(char *n)
 {
 	int i = 0;
 	int j = 0;
@@ -74,6 +74,6 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	if (digits == size_r)
 		return (0);
 	r[digits] = '\0';
-	reverse_array(r);
+	rev_array(r);
 	return (r);
 }
