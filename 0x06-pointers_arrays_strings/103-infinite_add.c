@@ -7,7 +7,7 @@
  * Return: 0
  */
 
-void rev_array(char *n)
+void reverse_array(char *n)
 {
 	int i = 0;
 	int j = 0;
@@ -74,6 +74,6 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	if (digits == size_r)
 		return (0);
 	r[digits] = '\0';
-	rev_array(r);
+	reverse_array(r);
 	return (r);
 }
