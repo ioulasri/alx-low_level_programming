@@ -32,7 +32,7 @@ char *_strstr(char *haystack, char *needle)
 			}
 			if (matching == 1)
 			{
-				return (needle);
+				return (haystack + i);
 			}
 		}
 		i++;
