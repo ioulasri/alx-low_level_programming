@@ -23,10 +23,12 @@ char *_strstr(char *haystack, char *needle)
 		if (haystack[i] == needle[j])
 		{
 			index = i;
-			while (needle[j])
+			while (needle[j] && needle[i + 1] != '\0')
 			{
-				if (needle[j++] != haystack[index++])
+				if (needle[j] != haystack[index])
 					matching = 0;
+				j++;
+				index++;
 			}
 			if (matching == 1)
 			{
