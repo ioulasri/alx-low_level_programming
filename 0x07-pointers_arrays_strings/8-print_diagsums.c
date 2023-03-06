@@ -4,8 +4,8 @@
 void print_diagsums(int *a, int size)
 {
 	int i;
-	int sum_1;
-	int sum_2;
+	unsigned int sum_1;
+	unsigned int sum_2;
 	
 	i = 0;
 	sum_1 = 0;
@@ -13,13 +13,8 @@ void print_diagsums(int *a, int size)
 
 	while (i < size)
 	{
-		sum_1 += a[i];
-		i++;
-	}
-	i = size - 1;
-	while (i >= 0)
-	{
-		sum_2 += a[i];
+		sum_1 += a[(size * i) + i];
+		sum_2 += a[(size * (i + 1)) - (i + 1)];
 		i++;
 	}
 	printf("%d, %d\n",sum_1, sum_2);
