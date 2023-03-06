@@ -2,26 +2,27 @@
 #include <stdlib.h>
 
 /**
- * _strcmp - compares the two string s1 and s2
+ * _strncmp - compares the two string s1 and s2
  * @s1: the first string
  * @s2: the second string
+ * @n: the len
  * Return: returns the difference between the two strings;
  */
 
-int _strcmp(char *s1, char *s2)
+int _strncmp(char *s1, char *s2, unsigned int n)
 {
-	int i;
+	unsigned int	i;
 
 	i = 0;
-	while (s1[i])
+	while (s1[i] != '\0')
 	{
-		if (s1[i] != s2[i])
-		{
+		if (i < n && (s1[i] != s2[i]))
 			return (s1[i] - s2[i]);
-		}
 		i++;
 	}
-	return (0);
+	if (i >= n)
+		return (0);
+	return (s1[i] - s2[i]);
 }
 
 /**
