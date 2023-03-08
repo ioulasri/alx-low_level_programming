@@ -1,4 +1,4 @@
-`IDENTIFY ERROR`![image](https://user-images.githubusercontent.com/105258746/190832836-b113fa0f-e26f-4db1-b8c5-d094c3dfd0a7.png) `ANALYZE ERROR`
+![bug_500](https://user-images.githubusercontent.com/115421891/223791854-2482979c-8a64-40c4-b125-26a71937d9c6.png)
 
 
 Debugging is the process of detecting and removing of existing and potential errors (also called as 'bugs') in a software code that can cause it to behave unexpectedly or crash.
