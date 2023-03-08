@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
  * str_len - computes the length of the string
@@ -50,19 +49,4 @@ int is_palindrome(char *s)
 	else if (len == 1)
 		return (1);
 	return (check_if_palindrome(s, 0, len));
-}
-
-int main(void)
-{
-	int r;
-
-	r = is_palindrome("level");
-	printf("%d\n", r);
-	r = is_palindrome("redder");
-	printf("%d\n", r);
-	r = is_palindrome("abcdecba");
-	printf("%d\n", r);
-	r = is_palindrome("step on no pets");
-	printf("%d\n", r);
-	return (0);
 }
