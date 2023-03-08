@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * str_len - computes the length of the string
@@ -24,12 +25,13 @@ int str_len(char *s)
 
 int check_if_palindrome(char *s, int i, int j)
 {
-	if (i == j - 1)
+	if (s[i] != s[j])
 		return (0);
-	else if (s[i] != s[j])
+	else if (i == j - 1)
 		return (1);
-	else
-		return (check_if_palindrome(s, i + 1, j - 1));
+	else if (i == j)
+		return (1);
+	return (check_if_palindrome(s, i + 1, j - 1));
 }
 
 /**
@@ -47,5 +49,20 @@ int is_palindrome(char *s)
 		return (1);
 	else if (len == 1)
 		return (1);
-	return (check_if_palindrome(s, 2, len));
+	return (check_if_palindrome(s, 0, len));
+}
+
+int main(void)
+{
+	int r;
+
+	r = is_palindrome("level");
+	printf("%d\n", r);
+	r = is_palindrome("redder");
+	printf("%d\n", r);
+	r = is_palindrome("abcdecba");
+	printf("%d\n", r);
+	r = is_palindrome("step on no pets");
+	printf("%d\n", r);
+	return (0);
 }
