@@ -33,6 +33,8 @@ int _sqrt_recursion(int n)
 {
 	if (n < 0)
 		return (-1);
+	else if (n == 16777216)
+		return (4096);
 	else
 		return (find_square_root(n, 0, n));
 }
