@@ -24,7 +24,7 @@ int find_square_root(int n, int low, int high)
 }
 
 /**
- * _sqrt_recursion - computes the square root of n 
+ * _sqrt_recursion - computes the square root of n
  * @n: the number to compute the square root of
  * Return: return the square root of n, -1 otherwise.
  */
