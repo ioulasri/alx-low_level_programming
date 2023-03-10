@@ -14,7 +14,7 @@ int check_str_number(char *c)
 	i = 0;
 	while (c[i])
 	{
-		if (c[i] <= '0' && c[i] >= '9')
+		if (c[i] < '0' && c[i] > '9')
 			return (0);
 		i++;
 	}
@@ -101,7 +101,7 @@ int main(int argc, char *argv[])
 	i = 1;
 	while (i < argc)
 	{
-		if (!check_str_number(argv[i]))
+		if (check_str_number(argv[i]))
 		{
 			printf("Error\n");
 			return (1);
