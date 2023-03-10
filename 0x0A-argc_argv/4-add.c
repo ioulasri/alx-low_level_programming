@@ -1,6 +1,12 @@
 #include "main.h"
 #include <stdio.h>
 
+/**
+ * check_str_number - checks if string contains numbers
+ * @c: the string
+ * Return: returns 1 if given string only contains numbers, 0 otherwise.
+ **/
+
 int check_str_number(char *c)
 {
 	int i;
