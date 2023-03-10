@@ -9,16 +9,14 @@
 
 int check_str_number(char *c)
 {
-	int i;
-
-	i = 0;
-	while (c[i])
+	while (*c)
 	{
-		if (c[i] < '0' || c[i] > '9')
-			return (0);
-		i++;
+		if (*c >= '0' && *c <= '9')
+			c++;
+		else
+			return (1);
 	}
-	return (1);
+	return (0);
 }
 
 /**
