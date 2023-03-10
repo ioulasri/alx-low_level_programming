@@ -12,8 +12,6 @@ int check_str_number(char *c)
 	int i;
 
 	i = 1;
-	if (!(c[0] == '-' || (c[0] >= '0' && c[0] <= '9')))
-		return (0);
 	while (c[i])
 	{
 		if (c[i] <= '0' && c[i] >= '9')
