@@ -82,14 +82,14 @@ int main(int argc, char *argv[])
 	i = 0;
 	times = 0;
 	if (argc != 2)
-	{	
+	{
 		printf("Error\n");
 		return (1);
 	}
 
 	if (_atoi(argv[1]) < 0)
-			printf("0\n");
-	else 
+		printf("0\n");
+	else
 	{
 		n = _atoi(argv[1]);
 		while (n > 0)
