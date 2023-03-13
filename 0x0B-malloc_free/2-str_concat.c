@@ -48,15 +48,19 @@ char *_create_array(unsigned int size)
 char *str_concat(char *s1, char *s2)
 {
 	char *str;
-	int i;
+	int i = 0;
 	int size_s1;
 	int size_s2;
-	int j;
+	int j = 0;
 
-	i = 0;
-	size_s1 = _strlen(s1);
-	size_s2 = _strlen(s2);
-	if (s1 == NULL)
+	if (s1 && s2)
+	{
+		size_s1 = _strlen(s1);
+		size_s2 = _strlen(s2);
+	}
+	else if (s1 == NULL && s2 == NULL)
+		return (NULL);
+	else if (s1 == NULL)
 	{
 		size_s1 = 0;
 		size_s2 = _strlen(s2);
@@ -66,8 +70,6 @@ char *str_concat(char *s1, char *s2)
 		size_s2 = 0;
 		size_s1 = _strlen(s1);
 	}
-	else if (s1 == NULL && s2 == NULL)
-		return (NULL);
 	str = _create_array(size_s1 + size_s2 + 1);
 	if (!str)
 		return (NULL);
@@ -76,8 +78,7 @@ char *str_concat(char *s1, char *s2)
 		str[i] = s1[i];
 		i++;
 	}
-	j = 0;
-	while (j <= size_s2)
+	while (j < size_s2)
 	{
 		str[i] = s2[j];
 		j++;
