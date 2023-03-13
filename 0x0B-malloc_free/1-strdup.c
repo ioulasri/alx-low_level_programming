@@ -20,7 +20,7 @@ int _strlen(char *s)
 }
 
 /**
- * create_array - creates an array of chars.
+ * _create_array - creates an array of chars.
  * @size: the size of the memory to allocate.
  * Return: the array created.
  */
@@ -50,7 +50,7 @@ char *_strdup(char *str)
 
 	i = 0;
 	new_str = _create_array(_strlen(str));
-	while (i < _strlen(str))
+	while (i <= _strlen(str))
 	{
 		new_str[i] = str[i];
 		i++;
