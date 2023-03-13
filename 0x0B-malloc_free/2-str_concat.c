@@ -55,9 +55,15 @@ char *str_concat(char *s1, char *s2)
 
 	i = 0;
 	if (s1 == NULL)
+	{
 		size_s1 = 0;
+		size_s2 = _strlen(s2);
+	}
 	else if (s2 == NULL)
+	{
 		size_s2 = 0;
+		size_s1 = _strlen(s1);
+	}
 	else if (s1 && s2)
 	{
 		size_s1 = _strlen(s1);
@@ -83,4 +89,3 @@ char *str_concat(char *s1, char *s2)
 	str[i] = '\0';
 	return (str);
 }
-
