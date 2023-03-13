@@ -50,6 +50,8 @@ char *_strdup(char *str)
 
 	i = 0;
 	new_str = _create_array(_strlen(str) + 1);
+	if (!new_str)
+		return (NULL);
 	while (i <= _strlen(str))
 	{
 		new_str[i] = str[i];
