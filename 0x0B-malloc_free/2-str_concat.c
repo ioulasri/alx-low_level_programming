@@ -57,9 +57,9 @@ char *str_concat(char *s1, char *s2)
 	size_s2 = _strlen(s2);
 	i = 0;
 	if (s1 == NULL)
-		str = _create_array(size_s2 + 1);
+		size_s1 = 0;
 	else if (s2 == NULL)
-		str = _create_array(size_s1 + 1);
+		size_s2 = 0;
 	else if (s1 == NULL && s2 == NULL)
 		return (NULL);
 	str = _create_array(size_s1 + size_s2 + 1);
