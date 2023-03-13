@@ -49,7 +49,7 @@ char *_strdup(char *str)
 	int i;
 
 	i = 0;
-	new_str = _create_array(_strlen(str));
+	new_str = _create_array(_strlen(str) + 1);
 	while (i <= _strlen(str))
 	{
 		new_str[i] = str[i];
