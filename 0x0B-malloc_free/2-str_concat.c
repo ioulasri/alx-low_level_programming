@@ -77,9 +77,10 @@ char *str_concat(char *s1, char *s2)
 		return (NULL);
 	for (i = 0; i < size_s1; i++)
 		str[i] = s1[i];
-	for (int j = 0; j < size_s2; j++ && i++)
+	for (int j = 0; j < size_s2; j++)
 	{
 		str[i] = s2[j];
+		i++;
 	}
 	str[i] = '\0';
 	return (str);
