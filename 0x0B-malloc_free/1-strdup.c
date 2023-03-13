@@ -48,6 +48,8 @@ char *_strdup(char *str)
 	char *new_str;
 	int i;
 
+	if (str == NULL);
+		return (NULL);
 	i = 0;
 	new_str = _create_array(_strlen(str) + 1);
 	if (!new_str)
