@@ -38,6 +38,13 @@ char *_create_array(unsigned int size)
 	return (array);
 }
 
+/**
+ * str_concat - concatenates two string.
+ * @s1: the first string.
+ * @s2: the second string.
+ * Return: the concatenated string.
+ */
+
 char *str_concat(char *s1, char *s2)
 {
 	char *str;
@@ -55,8 +62,9 @@ char *str_concat(char *s1, char *s2)
 		str = _create_array(size_s1 + 1);
 	else if (s1 == NULL && s2 == NULL)
 		return (NULL);
-	else
-		str = _create_array(size_s1 + size_s2 + 2);
+	str = _create_array(size_s1 + size_s2 + 1);
+	if (!str)
+		return (NULL);
 	while (i < size_s1)
 	{
 		str[i] = s1[i];
