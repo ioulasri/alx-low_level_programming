@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 /**
  * _strlen - returns the length of a given string
@@ -47,7 +46,7 @@ char *_create_array(unsigned int size)
 char *_strdup(char *str)
 {
 	char *new_str;
-	unsigned int i;
+	int i;
 
 	i = 0;
 	new_str = _create_array(_strlen(str));
