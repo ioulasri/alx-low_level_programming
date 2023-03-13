@@ -25,7 +25,7 @@ int _strlen(char *s)
  * Return: the array created.
  */
 
-char *create_array(unsigned int size)
+char *_create_array(unsigned int size)
 {
 	char *array;
 	unsigned int i;
@@ -51,7 +51,7 @@ char *_strdup(char *str)
 	unsigned int i;
 
 	i = 0;
-	new_str = create_array(_strlen(str));
+	new_str = _create_array(_strlen(str));
 	while (i < _strlen(str))
 	{
 		new_str[i] = str[i];
