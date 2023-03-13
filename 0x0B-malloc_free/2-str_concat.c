@@ -51,6 +51,7 @@ char *str_concat(char *s1, char *s2)
 	int size_s1;
 	int size_s2;
 	int i;
+	int j;
 
 	if (s1 && s2)
 	{
@@ -77,7 +78,7 @@ char *str_concat(char *s1, char *s2)
 		return (NULL);
 	for (i = 0; i < size_s1; i++)
 		str[i] = s1[i];
-	for (int j = 0; j < size_s2; j++)
+	for (j = 0; j < size_s2; j++)
 	{
 		str[i] = s2[j];
 		i++;
