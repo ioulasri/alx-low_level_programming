@@ -29,9 +29,7 @@ int _strlen(char *s)
 char *_create_array(unsigned int size)
 {
 	char *array;
-	unsigned int i;
 
-	i = 0;
 	if (size == 0)
 		return (NULL);
 	array = malloc(sizeof(char) * size);
