@@ -53,10 +53,17 @@ char *str_concat(char *s1, char *s2)
 	int size_s2;
 	int j;
 
-	size_s1 = _strlen(s1);
-	size_s2 = _strlen(s2);
 	i = 0;
-	if (s1 == NULL && s2 == NULL)
+	if (s1 == NULL)
+		size_s1 = 0;
+	else if (s2 == NULL)
+		size_s2 = 0;
+	else if (s1 && s2)
+	{
+		size_s1 = _strlen(s1);
+		size_s2 = _strlen(s2);
+	}
+	else if (s1 == NULL && s2 == NULL)
 		return (NULL);
 	str = _create_array(size_s1 + size_s2 + 1);
 	if (!str)
