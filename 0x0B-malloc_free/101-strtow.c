@@ -94,12 +94,10 @@ char **strtow(char *str)
 	while (str[i] != '\0' && j < num_words)
 	{
 		start = i;
-
 		while (str[i] != ' ' && str[i] != '\0')
 			i++;
 		end = i;
 		word_length = end - start;
-
 		if (word_length > 0)
 		{
 			word = malloc(sizeof(char) * (word_length + 1));
