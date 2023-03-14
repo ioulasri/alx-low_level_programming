@@ -79,18 +79,20 @@ char **strtow(char *str)
 	if (str == NULL || *str == '\0')
 		return (NULL);
 
-	int num_words = count_words(str);
+	int num_words;
+	int i = 0;
+	int j = 0;
+	int start;
+
+	num_words = count_words(str);
 	char **words = malloc(sizeof(char *) * (num_words + 1));
 
 	if (words == NULL)
 		return (NULL);
 
-	int i = 0;
-	int j = 0;
-
 	while (str[i] != '\0' && j < num_words)
 	{
-		int start = i;
+		start = i;
 
 		while (str[i] != ' ' && str[i] != '\0')
 			i++;
