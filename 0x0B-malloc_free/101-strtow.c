@@ -3,6 +3,24 @@
 #include <stdio.h>
 
 /**
+ * _strlen - returns the length of a given string
+ * @s: the string
+ * Return: the length of given string
+ */
+
+int _strlen(char *s)
+{
+	int i;
+
+	i = 0;
+	while (s[i])
+	{
+		i++;
+	}
+	return (i);
+}
+
+/**
  * _strncpy - copies n bytes from src to dest
  * @dest: the destination string
  * @src: the source string
@@ -85,7 +103,7 @@ char **strtow(char *str)
 	char *word;
 	char **words;
 
-	if (str == NULL || *str == '\0')
+	if (str == NULL || _strlen(str) == 0)
 		return (NULL);
 	num_words = count_words(str);
 	words = malloc(sizeof(char *) * (num_words + 1));
