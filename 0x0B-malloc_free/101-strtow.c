@@ -83,6 +83,8 @@ int count_words(char *str)
 		else
 			i++;
 	}
+	if (count == 0 && strlen(str) == 1 && str[0] == ' ')
+		count = 1;
 	return (count);
 }
 
