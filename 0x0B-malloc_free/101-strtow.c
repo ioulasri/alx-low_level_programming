@@ -89,10 +89,8 @@ char **strtow(char *str)
 		return (NULL);
 	num_words = count_words(str);
 	words = malloc(sizeof(char *) * (num_words + 1));
-
 	if (words == NULL)
 		return (NULL);
-
 	while (str[i] != '\0' && j < num_words)
 	{
 		start = i;
@@ -105,7 +103,6 @@ char **strtow(char *str)
 		if (word_length > 0)
 		{
 			word = malloc(sizeof(char) * (word_length + 1));
-
 			if (word == NULL)
 				return (NULL);
 			_strncpy(word, str + start, word_length);
