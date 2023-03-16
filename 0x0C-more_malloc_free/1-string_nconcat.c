@@ -1,5 +1,5 @@
-#include "main.h"
 #include <stdlib.h>
+#include "main.h"
 
 /**
  * __strlen - returns the length of a given string
@@ -20,52 +20,56 @@ int __strlen(char *s)
 }
 
 /**
- * __strncpy - copies n bytes from src to dest
- * @dest: the destination string
- * @src: the source string
- * @n: the number of bytes
- * Return: dest
+ * _strcpy - copies a string from src to dest
+ * @dest: the string to copy to
+ * @src: the string to copy from
+ * @i: the index to start from
+ * Return: dest the string the has src content
  */
 
-char *__strncpy(char *dest, char *src, unsigned int n)
+void _strcpy(char *dest, char *src, unsigned int i)
 {
-	unsigned int i;
+	int j;
 
-	i = 0;
-	while (src[i] && i < n)
+	j = 0;
+	while (src[j])
 	{
-		dest[i] = src[i];
+		dest[i] = src[j];
 		i++;
+		j++;
 	}
-	if (i < n)
-	{
-		while (dest[i])
-		{
-			dest[i] = '\0';
-			i++;
-		}
-	}
-	return (dest);
 }
 
 /**
- * __strncpy - concatenates two strings.
- * @s1: first string
- * @s2: second string
- * @n: the number of bytes
- * Return: pointer to string
+ * string_nconcat - concatenates two strings.
+ * @s1: the first string
+ * @s2: the second string
+ * @n: number of bytes to get from s2
+ * Return: the string containing s1 concatenated with s2.
  */
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *string;
+	int len;
+	unsigned int i;
 
+	i = 0;
 	if (!s1)
 		s1 = "";
 	if (!s2)
 		s2 = "";
-	string = malloc(sizeof(char) * (__strlen(s1) + n) + 1);
+	len = __strlen(s1);
+	string = malloc(sizeof(char) * (len + n) + 1);
 	if (!string)
 		return (NULL);
-	string = __strncpy(s1, s2, n);
+	_strcpy(string, s1, 0);
+	while (i < n)
+	{
+		string[len] = s2[i];
+		len++;
+		i++;
+	}
+	string[len] = '\0';
+	return (string);
 }
