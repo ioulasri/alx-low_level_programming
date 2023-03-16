@@ -27,9 +27,9 @@ int __strlen(char *s)
  * Return: dest
  */
 
-char *__strncpy(char *dest, char *src, int n)
+char *__strncpy(char *dest, char *src, unsigned int n)
 {
-	int i;
+	unsigned int i;
 
 	i = 0;
 	while (src[i] && i < n)
