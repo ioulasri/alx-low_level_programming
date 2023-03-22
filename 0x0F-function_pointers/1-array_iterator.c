@@ -7,17 +7,12 @@
  * @size: thr size of the array
  * @action: the pointer to function to use
  */
-
 void array_iterator(int *array, size_t size, void (*action)(int))
 {
 	unsigned int i;
 
 	if (!array || !action)
 		return;
-	i = 0;
-	while (i < size)
-	{
+	for (i = 0; i < size; i++)
 		action(array[i]);
-		i++;
-	}
 }
