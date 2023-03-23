@@ -29,9 +29,3 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	va_end(ap);
 	printf("\n");
 }
-
-int main(void)
-{
-    print_strings(", ", 4, "Jay", NULL ,"Django", NULL);
-    return (0);
-}
