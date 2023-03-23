@@ -6,7 +6,7 @@
  * @n: the numbers of parameters
  */
 
-void print_numbers(const char *separator, const unsigned int n, ...)
+void print_strings(const char *separator, const unsigned int n, ...)
 {
 	va_list ap;
 	unsigned int i;
@@ -22,10 +22,4 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	}
 	va_end(ap);
 	printf("\n");
-}
-
-int main(void)
-{
-    print_strings(", ", 2, "Jay", "Django");
-    return (0);
 }
