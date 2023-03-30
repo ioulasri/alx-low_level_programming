@@ -28,7 +28,7 @@ int _strlen(const char *s)
  * Return: address of the new element, or NULL if it failed
  *
  * Description: This function creates a new node with a copy of the string
- * 'str', and adds it to the end of the list pointed to by 'head'. If 'head'
+ * str, and adds it to the end of the list pointed to by 'head'. If 'head'
  * is NULL, or memory allocation fails, the function returns NULL. The string
  * 'str' is duplicated using the 'strdup' function. The function returns a
  * pointer to the new node.
