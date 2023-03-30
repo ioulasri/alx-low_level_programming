@@ -8,7 +8,7 @@
  *
  * Description: This function takes a pointer to the head of a list and frees
  * all the nodes in the list. The memory occupied by each node is deallocated
- * using the `free` function. The function does not return a value.
+ * using the free function. The function does not return a value.
  */
 
 void free_list(list_t *head)
