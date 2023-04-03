@@ -10,12 +10,12 @@ void free_listint(listint_t *head)
 {
 	listint_t *temp;
 
-	temp = head;
-	while (head)
+	temp = *head;
+	while (*head)
 	{
-		temp = head->next;
-		free(head);
-		head = temp;
+		temp = *head->next;
+		free(*head);
+		*head = temp;
 	}
 }
 
@@ -33,7 +33,7 @@ int main(void)
     add_nodeint_end(&head, 402);
     add_nodeint_end(&head, 1024);
     print_listint(head);
-    free_listint(head);
+    free_listint2(&head);
     printf("%p\n", (void *)head);
     return (0);
 }
