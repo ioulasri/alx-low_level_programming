@@ -8,7 +8,7 @@
  * @index: The index of the node to retrieve.
  *
  * Return: A pointer to the node at the specified index
- * or NULL if the index is out of range.
+ * or NULL if index is out of range.
  */
 
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
