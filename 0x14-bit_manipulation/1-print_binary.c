@@ -11,6 +11,12 @@ void print_binary(unsigned long int n)
 	unsigned long int mask = 1;
 	int size = 0;
 
+	if (n == 0)
+	{
+		printf("0");
+		return;
+	}
+	
 	while (mask <= n)
 	{
 		mask <<= 1;
