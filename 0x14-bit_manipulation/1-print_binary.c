@@ -8,30 +8,26 @@
  */
 void print_binary(unsigned long int n)
 {
-	unsigned long int mask = 1;
-	int size = 0;
+	unsigned long int temp;
+	int shifts;
 
 	if (n == 0)
 	{
 		printf("0");
 		return;
 	}
-	
-	while (mask <= n)
-	{
-		mask <<= 1;
-		size++;
-	}
+	temp = n;
+	shifts = 0;
 
-	if (size)
-		mask >>= 1;
+	while ((temp >>= 1) > 0)
+		shifts++;
 
-	while (mask)
+	while (shifts >= 0)
 	{
-		if (n & mask)
-			putchar('1');
+		if ((n >> shifts) & 1)
+			printf("1");
 		else
-			putchar('0');
-		mask >>= 1;
+			printf("0");
+		shifts--;
 	}
 }
