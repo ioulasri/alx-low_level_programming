@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# prompt the user for the file name
+read -p "Enter file name: " file_name
+
+# create the C file with the given name
+touch $file_name
+
+# open the file in Vim
+open $file_name
+

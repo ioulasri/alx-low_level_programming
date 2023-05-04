@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# check that a filename was provided as an argument
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 <filename>"
+    exit 1
+fi
+
+# extract the filename from the argument
+filename="$1"
+
+# check that the file exists
+if [ ! -f "$filename" ]; then
+    echo "Error: file '$filename' does not exist"
+    exit 1
+fi
+
+# extract the commit message from the filename
+commit_message="$filename"
+
+# add the file to the Git staging area
+git add $filename
+
+# commit the changes with the generated commit message
+git commit -m "Debugged and pushed the $commit_message program file"
+
+# push the changes to the remote repository
+git push
+
