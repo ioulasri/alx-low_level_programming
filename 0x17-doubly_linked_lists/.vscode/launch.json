@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/imadoulasri/Documents/alx-higher_level_programming/0x17-doubly_linked_lists",
+      "program": "/Users/imadoulasri/Documents/alx-higher_level_programming/0x17-doubly_linked_lists/build/Debug/outDebug"
+    }
+  ]
+}
