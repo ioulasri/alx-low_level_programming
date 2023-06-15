@@ -1,6 +1,27 @@
 #include "lists.h"
 
 /**
+ * dlistint_len - computing the length of a double linked list
+ * @h: the head
+ * Return: the size of the list
+ */
+
+size_t dlistint_len(const dlistint_t *h)
+{
+	const dlistint_t *curr = h;
+	size_t size = 0;
+
+	if (!curr)
+		return (0);
+	while (curr)
+	{
+		curr = curr->next;
+		size++;
+	}
+	return (size);
+}
+
+/**
  * insert_dnodeint_at_index - insert node at index
  *
  * @h: the head
@@ -16,6 +37,12 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 	if (!new_node)
 		return (NULL);
+
+	if (idx == 0)
+		return (add_dnodeint(h, n));
+
+	if (idx == dlistint_len(*h) - 1)
+		return (add_dnodeint_end(h, n));
 
 	curr = *h;
 	new_node->next = NULL;
